@@ -97,7 +97,7 @@ msg.delete();
 }
 });
 
-lient.on('message', async message => {
+client.on('message', async message => {
     var command = message.content.toLowerCase().split(" ")[0];
     var prefix = '!!';// Alpha Codes
     var name = '';// Alpha Codes
