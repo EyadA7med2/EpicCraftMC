@@ -56,51 +56,28 @@ client.on('message',message =>{
     });
 
 
-client.on("message", async msg => {
+client.on('message', msg => { // Leaked by [ @M3a4x ]
+  if (msg.author.bot) return;
+  if (!msg.content.startsWith(prefix)) return;
+  var command = msg.content.split(" ")[0];
+  command = command.slice(prefix.length);
+  var args = msg.content.split(" ").slice(1);
 
-    if (msg.channel.type !== "clear") return undefined;
-
-    if (msg.auhtor.bot) return undefined;
-
-    var args = msg.content.split(" ")
-
-    var prefix = "!"
-
-    if (msg.content.toLowerCase().startsWith(prefix + "clear")) {
-
-    if(!msg.guild.members.get(msg.author.id).hasPermission("MANAGE_MESSAGES")) return msg.channel.send("You lack permissions.")
-
-    if(!msg.guild.members.get(client.user.id).hasPermission("MANAGE_MESSAGES")) return msg.channel.send("I lack permissions.")
-
-    if (!args[1]) return msg.channel.send("DiscordAPI Err : Missing args.")
-
-    var count = parseInt(args[1]);
-
-    var fetched = msg.channel.fetchMessages({limit : count})
-
-    if (isNaN(count)) return msg.channel.send("DiscordAPI Err : Only numbers are allowed.")
-
-    if (count < 0) return msg.channel.send("DiscordAPI Err : Unvalid numbers.")
-
-    if (count == 0) return msg.channel.send("DiscordAPI Err : 0 messages ???")
-
-    if (count > 100) return msg.channel.send(DiscordAPI Err : cannot delete ${args[1]} message..)
-
-    if (fetched.length == 0) return msg.channel.send(DiscordAPI Err : ${msg.channel.name} is empty..)
-
-    else {
-    try {
-        fetched.then(async msgs => {
-          await msg.channel.bulkDelete(msgs)
-          await msg.channel.send(Bulked ${msgs.size-=1} message.).then(msg => {
-            msg.delete(4000)
-          })
-        })
-    } catch (e) {
-      console.log(e.stack)
+    if(command === "clear") {
+        const emoji = client.emojis.find("name", "wastebasket")
+   var textxt = args.slice(0).join("");
+    if(msg.member.hasPermission("MANAGE_MESSAGES")) {
+    if (textxt == "") {
+        msg.delete().then
+    msg.channel.send("***```ضع عدد الرسائل التي تريد مسحه```***").then(m => m.delete(3000));
+} else {
+    msg.delete().then
+    msg.delete().then
+    msg.channel.bulkDelete(textxt);
+        msg.channel.send("```php\nعدد الرسائل التي تم مسحها: " + textxt + "\n```").then(m => m.delete(3000));
+        }
     }
-    }
-  }
+}
 });
 
 
