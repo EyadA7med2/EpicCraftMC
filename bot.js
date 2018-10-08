@@ -276,4 +276,4 @@ if (message.content === '1support') {
 
 
 
-client.login(process.env.Epic);
+client.login(process.env.NDk3ODMwNTMxOTI5NDczMDI0.Dp0jMQ.9Q-AdioPjNV5g0tE_0Q279kkhXI);
