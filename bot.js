@@ -8,7 +8,7 @@ client.on('ready', () => {
 });
 
 client.on('ready', () => {
-    client.user.setGame(`اشياء جديدة قريباً`, "http://twitch.tv/Streammingg")    
+    client.user.setGame(`في !clear بالبوت`, "http://twitch.tv/Streammingg")    
 });
 
 
@@ -101,7 +101,7 @@ client.on("message", async msg => {
     }
     }
   }
-})
+});
 
 
 
