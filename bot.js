@@ -8,7 +8,7 @@ client.on('ready', () => {
 });
 
 client.on('ready', () => {
-    client.user.setGame(`I Love MASTERFORGAMING`, "http://twitch.tv/Streammingg")    
+    client.user.setGame(`حياكم الله`, "http://twitch.tv/Streammingg")    
 });
 
 
