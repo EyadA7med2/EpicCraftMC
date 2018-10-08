@@ -59,7 +59,7 @@ var client = new Discord.Client();
 
 client.on("message", async msg => {
 
-    if (msg.channel.type !== "text") return undefined;
+    if (msg.channel.type !== "clear") return undefined;
 
     if (msg.auhtor.bot) return undefined;
 
@@ -67,7 +67,7 @@ client.on("message", async msg => {
 
     var prefix = "!"
 
-    if (msg.content.toLowerCase().startsWith(prefix + "purge")) {
+    if (msg.content.toLowerCase().startsWith(prefix + "clear")) {
 
     if(!msg.guild.members.get(msg.author.id).hasPermission("MANAGE_MESSAGES")) return msg.channel.send("You lack permissions.")
 
