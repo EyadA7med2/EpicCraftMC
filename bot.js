@@ -170,3 +170,12 @@ client.on('message', message => {
   })
 }
 });
+
+
+
+
+
+
+
+
+client.login(process.env.NDk3ODMwNTMxOTI5NDczMDI0.Dp0jMQ.9Q-AdioPjNV5g0tE_0Q279kkhXI);
