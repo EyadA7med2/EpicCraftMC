@@ -8,7 +8,7 @@ client.on('ready', () => {
 });
 
 client.on('ready', () => {
-    client.user.setGame(`في !clear بالبوت`, "http://twitch.tv/Streammingg")    
+    client.user.setGame(`I Love MASTERFORGAMING`, "http://twitch.tv/Streammingg")    
 });
 
 
