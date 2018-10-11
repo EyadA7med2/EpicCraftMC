@@ -4,7 +4,7 @@ client.on('ready', () => {
 });
 
 client.on('ready', () => {
-    client.user.setGame(`حياكم الله`, "http://twitch.tv/Streammingg")    
+    client.user.setGame(`test`, "http://twitch.tv/Streammingg")    
 });
 
 
