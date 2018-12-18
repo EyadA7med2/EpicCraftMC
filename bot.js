@@ -338,6 +338,93 @@ if(!message.guild.member(client.user).hasPermission("MUTE_MEMBERS")) return mess
  
 });
 
+client.on('message', async rokz => {
+var prefix = "!"
+ 
+    if(rokz.content.startsWith(prefix + "تقديم")) {
+ 
+      let lang = '';
+ 
+      let time = '';
+ 
+      let expe = '';
+ 
+      let fillter = m => m.author.id === rokz.author.id
+ 
+      await rokz.channel.send("**ما الرتبة اللي تبي تقدم عليها ؟**").then(e => {
+ 
+     rokz.channel.awaitMessages(fillter, { time: 60000, max: 1 })
+ 
+     .then(co => {
+ 
+       lang = co.first().content;
+ 
+        co.first().delete();
+ 
+ 
+       e.edit(`اذا اخذت الرتبة ايش بتسوي ؟
+[${lang}]`)
+ 
+       rokz.channel.awaitMessages(fillter, { time: 60000, max: 1 })
+ 
+       .then(col => {
+ 
+         time = col.first().content;
+ 
+          col.first().delete();
+ 
+ 
+            e.edit(`كم عمرك ؟
+[${time}]
+[${lang}]`)
+ 
+            rokz.channel.awaitMessages(fillter, { time: 60000, max: 1 })
+ 
+            .then(coll => {
+ 
+              expe = coll.first().content;
+ 
+               coll.first().delete();
+ 
+ 
+               e.edit(`جاري تقديمك...
+[${expe}]
+[${time}]
+[${lang}]`)
+ 
+              let rokzz = rokz.guild.channels.find("name","✵-「التقديمات")
+ 
+              setTimeout(() => {
+ 
+                e.edit("**تم التقديم**")
+ 
+              }, 3000)
+ 
+              rokzz.send(`
+» اللغة : **${lang}**
+» المدة : **${time}**
+» الخبرة : **${expe}**
+تم التقديم بواسطة: ${rokz.author}
+`).then(rokzzz => {
+ 
+                  rokzzz.react(":CheckMark:")
+ 
+                  rokzzz.react(":WrongMark:")
+ 
+                })
+ 
+            })
+ 
+       })
+ 
+     })
+ 
+   })
+ 
+    }
+ 
+  })
+
 
 
 
