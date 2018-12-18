@@ -341,7 +341,7 @@ if(!message.guild.member(client.user).hasPermission("MUTE_MEMBERS")) return mess
 client.on('message', async rokz => {
 var prefix = "!"
  
-    if(rokz.content.startsWith(prefix + "تقديم")) {
+    if(rokz.content.startsWith(prefix + "Submit")) {
  
       let lang = '';
  
